@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mazeh_app/constants/app_color.dart';
 import 'package:mazeh_app/widgets/appbar.dart';
 import 'package:mazeh_app/widgets/banner_slider.dart';
+import 'package:mazeh_app/widgets/category_widget.dart';
 import 'package:mazeh_app/widgets/search_box.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -38,6 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverPadding(padding: EdgeInsets.only(top: 16)),
             SliverToBoxAdapter(child: const BannerSlider()),
             SliverPadding(padding: EdgeInsets.only(top: 8)),
+            SliverToBoxAdapter(child: const CategoryTitle()),
+            SliverToBoxAdapter(child: const CategorySelector()),
             SliverToBoxAdapter(
               child: Container(
                 margin: EdgeInsets.all(8),
