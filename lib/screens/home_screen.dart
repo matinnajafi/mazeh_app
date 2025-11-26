@@ -2,6 +2,7 @@ import 'package:fade_scroll_app_bar/fade_scroll_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:mazeh_app/constants/app_color.dart';
 import 'package:mazeh_app/widgets/appbar.dart';
+import 'package:mazeh_app/widgets/banner_slider.dart';
 import 'package:mazeh_app/widgets/search_box.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -34,20 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
           physics: const BouncingScrollPhysics(),
           slivers: [
             // Here goes the slivers(banners, lists, grids and etc)
-            SliverToBoxAdapter(
-              child: Container(
-                margin: EdgeInsets.all(8),
-                height: 100,
-                color: Colors.yellow,
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: Container(
-                margin: EdgeInsets.all(8),
-                height: 100,
-                color: Colors.blue,
-              ),
-            ),
+            SliverPadding(padding: EdgeInsets.only(top: 16)),
+            SliverToBoxAdapter(child: const BannerSlider()),
+            SliverPadding(padding: EdgeInsets.only(top: 8)),
             SliverToBoxAdapter(
               child: Container(
                 margin: EdgeInsets.all(8),
