@@ -39,48 +39,19 @@ class _HomeScreenState extends State<HomeScreen> {
             // Here goes the slivers(banners, lists, grids and etc)
             SliverPadding(padding: EdgeInsets.only(top: 16)),
             SliverToBoxAdapter(child: const BannerSlider()),
-            SliverPadding(padding: EdgeInsets.only(top: 10)),
+            SliverPadding(padding: EdgeInsets.only(top: 16)),
             SliverToBoxAdapter(child: const CategoryTitle()),
             SliverToBoxAdapter(child: const CategorySelector()),
-            SliverPadding(padding: EdgeInsets.only(top: 14)),
+            SliverPadding(padding: EdgeInsets.only(top: 16)),
             SliverToBoxAdapter(child: const RecipeListTitle()),
+            SliverPadding(padding: EdgeInsets.only(top: 4)),
             SliverToBoxAdapter(child: const RecipeList()),
-            SliverToBoxAdapter(
-              child: Container(
-                margin: EdgeInsets.all(8),
-                height: 100,
-                color: Colors.teal,
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: Container(
-                margin: EdgeInsets.all(8),
-                height: 100,
-                color: Colors.redAccent,
-              ),
-            ),
+            SliverPadding(padding: EdgeInsets.only(top: 16)),
+            SliverToBoxAdapter(child: const RecipeListTitle()),
+            SliverPadding(padding: EdgeInsets.only(top: 4)),
+            SliverToBoxAdapter(child: const RecipeList()),
+            SliverPadding(padding: EdgeInsets.only(top: 120)),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class RecipeList extends StatelessWidget {
-  const RecipeList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 24),
-      child: SizedBox(
-        height: 240,
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: 8,
-          itemBuilder: (context, index) {
-            return RecipeCardWidget();
-          },
         ),
       ),
     );

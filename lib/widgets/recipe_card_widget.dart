@@ -1,6 +1,31 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:mazeh_app/constants/app_color.dart';
+
+class RecipeList extends StatelessWidget {
+  const RecipeList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 24),
+      child: SizedBox(
+        height: 240,
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: 8,
+            itemBuilder: (context, index) {
+              return RecipeCardWidget();
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class RecipeCardWidget extends StatelessWidget {
   const RecipeCardWidget({super.key});
@@ -39,7 +64,7 @@ class _Footer extends StatelessWidget {
       padding: const EdgeInsets.only(right: 10, left: 10, bottom: 14),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
             'جوجه کباب با سبزیجات',
@@ -51,31 +76,8 @@ class _Footer extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Container(
-                padding: const EdgeInsets.only(
-                  top: 1,
-                  bottom: 3,
-                  left: 12,
-                  right: 12,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.green.withOpacity(0.25),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: const Text(
-                  'آسان',
-                  style: TextStyle(
-                    fontFamily: 'CSB',
-                    color: Colors.green,
-                    fontSize: 10, // خواناتر
-                    fontWeight:
-                        FontWeight.w500, // کمی ضخیم‌تر برای حرفه‌ای بودن
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
               const Text.rich(
                 TextSpan(
                   children: [
@@ -107,6 +109,28 @@ class _Footer extends StatelessWidget {
                 ),
                 textDirection: TextDirection.rtl,
               ),
+              Container(
+                padding: const EdgeInsets.only(
+                  top: 1,
+                  bottom: 3,
+                  left: 12,
+                  right: 12,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.green.withOpacity(0.25),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Text(
+                  'آسان',
+                  style: TextStyle(
+                    fontFamily: 'CSB',
+                    color: Colors.green,
+                    fontSize: 10,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ],
           ),
         ],
@@ -125,6 +149,26 @@ class _Header extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       child: Row(
         children: [
+          ClipOval(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white.withOpacity(0.2),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(5.0),
+                  child: Icon(
+                    Icons.bookmark_border,
+                    color: Colors.white,
+                    size: 22,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          const Spacer(),
           ClipRRect(
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(18),
@@ -146,26 +190,6 @@ class _Header extends StatelessWidget {
                   child: Text(
                     'ناهار',
                     style: TextStyle(fontFamily: 'CSB', color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          const Spacer(),
-          ClipOval(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white.withOpacity(0.2),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.all(5.0),
-                  child: Icon(
-                    Icons.bookmark_border,
-                    color: Colors.white,
-                    size: 22,
                   ),
                 ),
               ),
@@ -201,11 +225,28 @@ class RecipeListTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.only(right: 24.0, bottom: 12.0, top: 4.0),
-      child: Text(
-        'محبوب‌ترین‌ ها',
-        textAlign: TextAlign.right,
-        style: TextStyle(fontSize: 18, fontFamily: 'CSB'),
+      padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 3.0),
+            child: Icon(Icons.arrow_back_ios, size: 12, color: AppColor.red),
+          ),
+          Text(
+            'مشاهده همه',
+            style: TextStyle(
+              fontSize: 12,
+              fontFamily: 'CSB',
+              color: AppColor.red,
+            ),
+          ),
+          Spacer(),
+          Text(
+            'دستورهای پربازدید',
+            style: TextStyle(fontSize: 18, fontFamily: 'CSB'),
+          ),
+        ],
       ),
     );
   }

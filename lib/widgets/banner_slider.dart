@@ -26,7 +26,7 @@ class _BannerSliderState extends State<BannerSlider> {
               width: double.infinity,
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(18),
                   image: DecorationImage(
                     image: AssetImage('images/banner$index.png'),
                     fit: BoxFit.cover,
