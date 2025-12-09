@@ -1,11 +1,11 @@
 import 'package:fade_scroll_app_bar/fade_scroll_app_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:mazeh_app/constants/app_color.dart';
-import 'package:mazeh_app/widgets/appbar.dart';
-import 'package:mazeh_app/widgets/banner_slider.dart';
-import 'package:mazeh_app/widgets/category_widget.dart';
-import 'package:mazeh_app/widgets/recipe_card_widget.dart';
-import 'package:mazeh_app/widgets/search_box.dart';
+import 'package:mazeh_app/core/constants/app_color.dart';
+import 'package:mazeh_app/presentation/widgets/appbar.dart';
+import 'package:mazeh_app/presentation/widgets/banner_slider.dart';
+import 'package:mazeh_app/presentation/widgets/category_widget.dart';
+import 'package:mazeh_app/presentation/widgets/recipe_card_widget.dart';
+import 'package:mazeh_app/presentation/widgets/search_box.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverToBoxAdapter(child: const RecipeListTitle()),
             SliverPadding(padding: EdgeInsets.only(top: 4)),
             SliverToBoxAdapter(child: const RecipeList()),
-            SliverPadding(padding: EdgeInsets.only(top: 120)),
+            SliverPadding(padding: EdgeInsets.only(top: 32)),
           ],
         ),
       ),

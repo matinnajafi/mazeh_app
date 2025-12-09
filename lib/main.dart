@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mazeh_app/screens/save_recipe_screen.dart';
+import 'package:mazeh_app/core/routing/go_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: SaveRecipeScreen(),
+      routerConfig: appGlobalRout,
     );
   }
 }

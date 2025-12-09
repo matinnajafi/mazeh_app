@@ -19,8 +19,8 @@ class AppbarLeading extends StatelessWidget {
               padding: const EdgeInsets.all(5.0),
               child: Icon(
                 Icons.notifications_none,
-                color: Colors.grey.shade800,
-                size: 28,
+                color: Colors.grey.shade700,
+                size: 24,
               ),
             ),
           ),

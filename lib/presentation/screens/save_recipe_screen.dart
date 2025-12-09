@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mazeh_app/constants/app_color.dart';
-import 'package:mazeh_app/widgets/save_screen_widget.dart';
+import 'package:mazeh_app/core/constants/app_color.dart';
+import 'package:mazeh_app/presentation/widgets/save_screen_widget.dart';
 
 class SaveRecipeScreen extends StatelessWidget {
   const SaveRecipeScreen({super.key});

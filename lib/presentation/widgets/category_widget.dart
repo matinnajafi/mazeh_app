@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mazeh_app/constants/app_color.dart';
+import 'package:mazeh_app/core/constants/app_color.dart';
 
 class CategorySelector extends StatelessWidget {
   const CategorySelector({super.key});
