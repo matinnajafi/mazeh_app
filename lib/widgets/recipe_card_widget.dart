@@ -18,7 +18,10 @@ class RecipeList extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 8,
             itemBuilder: (context, index) {
-              return RecipeCardWidget();
+              return Padding(
+                padding: const EdgeInsets.only(left: 14.0),
+                child: RecipeCardWidget(),
+              );
             },
           ),
         ),
@@ -33,7 +36,6 @@ class RecipeCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 14),
       height: 240,
       width: 175,
       decoration: BoxDecoration(

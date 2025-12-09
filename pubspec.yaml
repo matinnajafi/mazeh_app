@@ -37,6 +37,8 @@ dependencies:
   fade_scroll_app_bar: ^0.0.7
   dotted_border: ^3.1.0
   carousel_slider: ^5.1.1
+  flutter_staggered_animations: ^1.1.1
+  flutter_listfilter: ^0.0.12
 
 dev_dependencies:
   flutter_test:
