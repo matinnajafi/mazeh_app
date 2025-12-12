@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mazeh_app/presentation/screens/add_recipe_screen.dart';
-import 'package:mazeh_app/presentation/screens/home_screen.dart';
-import 'package:mazeh_app/presentation/screens/profile_screen.dart';
-import 'package:mazeh_app/presentation/screens/refrigerator_screen.dart';
-import 'package:mazeh_app/presentation/screens/save_recipe_screen.dart';
-import 'package:mazeh_app/presentation/widgets/bottom_navigation_shell.dart';
+import 'package:mazeh_app/features/add_recipes/presentation/screens/add_recipe_screen.dart';
+import 'package:mazeh_app/features/home/presentation/screens/home_screen.dart';
+import 'package:mazeh_app/features/navigation/presentation/widgets/bottom_navigation_shell.dart';
+import 'package:mazeh_app/features/profile/presentation/screens/profile_screen.dart';
+import 'package:mazeh_app/features/refrigerator/presentation/screens/refrigerator_screen.dart';
+import 'package:mazeh_app/features/saved_recipes/presentatin/screens/save_recipe_screen.dart';
 
 final appGlobalRout = GoRouter(
   errorBuilder: (context, state) {

@@ -1,11 +1,11 @@
 import 'package:fade_scroll_app_bar/fade_scroll_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:mazeh_app/core/constants/app_color.dart';
-import 'package:mazeh_app/presentation/widgets/appbar.dart';
-import 'package:mazeh_app/presentation/widgets/banner_slider.dart';
-import 'package:mazeh_app/presentation/widgets/category_widget.dart';
-import 'package:mazeh_app/presentation/widgets/recipe_card_widget.dart';
-import 'package:mazeh_app/presentation/widgets/search_box.dart';
+import 'package:mazeh_app/features/home/presentation/widgets/appbar.dart';
+import 'package:mazeh_app/features/home/presentation/widgets/banner_slider.dart';
+import 'package:mazeh_app/features/home/presentation/widgets/category_widget.dart';
+import 'package:mazeh_app/features/home/presentation/widgets/recipe_card_widget.dart';
+import 'package:mazeh_app/features/home/presentation/widgets/search_box.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
