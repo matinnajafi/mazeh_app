@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mazeh_app/core/constants/app_color.dart';
-import 'package:mazeh_app/features/profile/presentation/widgets/group_tile_divider.dart';
 import 'package:mazeh_app/features/profile/presentation/widgets/main_tiles_title.dart';
 import 'package:mazeh_app/features/profile/presentation/widgets/row_tile.dart';
-import 'package:mazeh_app/features/profile/presentation/widgets/tile_divider.dart';
+import 'package:mazeh_app/shared/widgets/group_tile_divider.dart';
+import 'package:mazeh_app/shared/widgets/tile_divider.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
