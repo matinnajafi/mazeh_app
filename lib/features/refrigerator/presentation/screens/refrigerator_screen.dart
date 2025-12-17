@@ -55,67 +55,65 @@ class _RefrigeratorScreenState extends State<RefrigeratorScreen>
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
-      body: Stack(
-        children: [
-          // Refrigerator interior
-          Positioned.fill(
-            child: Container(
-              color: Colors.white,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  buildShelf(color: Colors.blue[100]),
-                  buildShelf(color: Colors.green[100]),
-                  buildShelf(color: Colors.orange[100]),
-                ],
+      body: SafeArea(
+        child: Stack(
+          children: [
+            // Refrigerator interior
+            Positioned.fill(
+              child: Container(
+                color: AppColor.backgroundColor,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [buildShelf(), buildShelf(), buildShelf()],
+                ),
               ),
             ),
-          ),
 
-          // Left door
-          AnimatedBuilder(
-            animation: _controller,
-            builder: (context, child) {
-              return Align(
-                alignment: Alignment.centerLeft,
-                child: Transform(
+            // Left door
+            AnimatedBuilder(
+              animation: _controller,
+              builder: (context, child) {
+                return Align(
                   alignment: Alignment.centerLeft,
-                  transform:
-                      Matrix4.identity()
-                        ..setEntry(3, 2, 0.001)
-                        ..rotateY(_leftDoorAnimation.value),
-                  child: RefrigeratorDoorWidget(
-                    width: size.width / 2,
-                    isLeft: true,
-                    onTap: _toggleDoors,
+                  child: Transform(
+                    alignment: Alignment.centerLeft,
+                    transform:
+                        Matrix4.identity()
+                          ..setEntry(3, 2, 0.001)
+                          ..rotateY(_leftDoorAnimation.value),
+                    child: RefrigeratorDoorWidget(
+                      width: size.width / 2,
+                      isLeft: true,
+                      onTap: _toggleDoors,
+                    ),
                   ),
-                ),
-              );
-            },
-          ),
+                );
+              },
+            ),
 
-          // Right door
-          AnimatedBuilder(
-            animation: _controller,
-            builder: (context, child) {
-              return Align(
-                alignment: Alignment.centerRight,
-                child: Transform(
+            // Right door
+            AnimatedBuilder(
+              animation: _controller,
+              builder: (context, child) {
+                return Align(
                   alignment: Alignment.centerRight,
-                  transform:
-                      Matrix4.identity()
-                        ..setEntry(3, 2, 0.001)
-                        ..rotateY(_rightDoorAnimation.value),
-                  child: RefrigeratorDoorWidget(
-                    width: size.width / 2,
-                    isLeft: false,
-                    onTap: _toggleDoors,
+                  child: Transform(
+                    alignment: Alignment.centerRight,
+                    transform:
+                        Matrix4.identity()
+                          ..setEntry(3, 2, 0.001)
+                          ..rotateY(_rightDoorAnimation.value),
+                    child: RefrigeratorDoorWidget(
+                      width: size.width / 2,
+                      isLeft: false,
+                      onTap: _toggleDoors,
+                    ),
                   ),
-                ),
-              );
-            },
-          ),
-        ],
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
