@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mazeh_app/core/constants/app_color.dart';
+import 'package:mazeh_app/features/refrigerator/presentation/widgets/refrigerator_widgets/bottom_sheet.dart';
 import 'package:mazeh_app/features/refrigerator/presentation/widgets/refrigerator_widgets/refrigerator_door_widget.dart';
 import 'package:mazeh_app/features/refrigerator/presentation/widgets/refrigerator_widgets/refrigerator_shelf_widget.dart';
 
@@ -16,6 +17,8 @@ class _RefrigeratorScreenState extends State<RefrigeratorScreen>
   late Animation<double> _leftDoorAnimation;
   late Animation<double> _rightDoorAnimation;
   bool _isOpen = false;
+
+  final ScrollController bottomSheetScrollController = ScrollController();
 
   @override
   void initState() {
@@ -47,6 +50,7 @@ class _RefrigeratorScreenState extends State<RefrigeratorScreen>
   @override
   void dispose() {
     _controller.dispose();
+    bottomSheetScrollController.dispose();
     super.dispose();
   }
 
@@ -60,12 +64,40 @@ class _RefrigeratorScreenState extends State<RefrigeratorScreen>
           children: [
             // Refrigerator interior
             Positioned.fill(
-              child: Container(
-                color: AppColor.backgroundColor,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [buildShelf(), buildShelf(), buildShelf()],
-                ),
+              child: Column(
+                children: [
+                  buildShelf(),
+                  buildShelf(),
+                  buildShelf(),
+                  const Spacer(),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(200, 60),
+                      backgroundColor: Colors.blueAccent,
+                      overlayColor: Colors.white,
+                      shape: ContinuousRectangleBorder(
+                        borderRadius: BorderRadius.circular(44),
+                      ),
+                    ),
+                    onPressed: () {
+                      showModalBottomSheet(
+                        backgroundColor: AppColor.backgroundColor,
+                        context: context,
+                        isScrollControlled: true,
+                        builder: (context) => AddItemBottomSheet(),
+                      );
+                    },
+                    child: const Text(
+                      'افزودن آیتم',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'CSB',
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+                ],
               ),
             ),
 

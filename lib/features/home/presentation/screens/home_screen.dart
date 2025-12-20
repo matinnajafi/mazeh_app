@@ -32,7 +32,10 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: AppColor.red,
         fadeWidget: const FadingTextAppbar(),
         bottomWidgetHeight: 76,
-        bottomWidget: const SearchBox(),
+        bottomWidget: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          child: SearchBox(onFilterTap: () {}),
+        ),
         child: CustomScrollView(
           physics: const BouncingScrollPhysics(),
           slivers: [
