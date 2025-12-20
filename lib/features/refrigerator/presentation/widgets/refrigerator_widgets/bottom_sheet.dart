@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mazeh_app/features/home/presentation/widgets/search_box.dart';
-import 'package:mazeh_app/features/refrigerator/presentation/widgets/refrigerator_widgets/filter_dialog.dart';
+import 'package:mazeh_app/features/refrigerator/presentation/widgets/refrigerator_widgets/dialog/filter_dialog.dart';
 import 'package:mazeh_app/features/refrigerator/presentation/widgets/refrigerator_widgets/ingredient_card.dart';
 
 class AddItemBottomSheet extends StatelessWidget {
