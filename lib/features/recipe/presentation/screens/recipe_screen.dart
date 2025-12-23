@@ -6,6 +6,7 @@ import 'package:mazeh_app/features/recipe/presentation/widgets/lets_cook_button.
 import 'package:mazeh_app/features/recipe/presentation/widgets/recipe_info.dart';
 import 'package:mazeh_app/features/recipe/presentation/widgets/recipe_ingredient.dart';
 import 'package:mazeh_app/features/recipe/presentation/widgets/recipe_nutrition.dart';
+import 'package:mazeh_app/features/recipe/presentation/widgets/timeline_widget.dart';
 import 'package:mazeh_app/shared/widgets/bottom_sheet_header.dart';
 import 'package:mazeh_app/shared/widgets/tile_divider.dart';
 
@@ -125,13 +126,14 @@ class RecipeScreen extends StatelessWidget {
                 ),
               ),
               SliverToBoxAdapter(child: RecipeIngredientsList()),
+              SliverToBoxAdapter(child: InteractiveTimeline()),
               SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.only(
                     right: 24,
                     left: 24,
-                    top: 12,
-                    bottom: 44,
+                    top: 6,
+                    bottom: 32,
                   ),
                   child: LetsCookButton(),
                 ),
