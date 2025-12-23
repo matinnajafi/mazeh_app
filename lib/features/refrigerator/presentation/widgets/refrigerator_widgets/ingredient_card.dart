@@ -7,7 +7,7 @@ class IngredientItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 110,
-      width: double.infinity,
+      width: 80,
       child: Padding(
         padding: const EdgeInsets.all(2),
         child: Container(
