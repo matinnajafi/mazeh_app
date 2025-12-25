@@ -8,7 +8,7 @@ class RecipeDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       textAlign: TextAlign.right,
-      'پاستا یک غذای مربوط به دهه 1960,. هست و از آن زمان عشایر اروپای غربی به پخت این غذا روی اوردند و در حال حاضر یکی از محبوب ترین غداهای شهرغذای مربوط به دهه 1960,. هست و از آن زمان عشایر اروپای غربی به پخت این غذا روی اوردند و در حال حاضر یکی از محبوب ترین غداهای شهر ایتالیاست',
+      'پاستا یکی از غذاهای کلاسیک ایتالیایی است که از دهه‌های گذشته وارد سفره‌های مردم شد و به‌تدریج جایگاه ویژه‌ای در آشپزی جهان پیدا کرد. ترکیب ساده اما خوش‌طعم آن باعث شد خانواده‌های اروپایی به‌سرعت به پخت این غذا روی بیاورند. امروزه پاستا به‌عنوان یکی از محبوب‌ترین غذاهای ایتالیا شناخته می‌شود و در بسیاری از شهرهای دنیا با سبک‌ها و سس‌های مختلف سرو می‌شود',
       style: TextStyle(fontFamily: 'CSB'),
     );
   }
@@ -22,16 +22,36 @@ class RecipeTagsBar extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const Text(
-          '۴ نظر ثبت شده',
-          textDirection: TextDirection.rtl,
-          style: TextStyle(
-            color: Colors.blue,
-            fontFamily: 'CM',
-            fontSize: 12,
-            textBaseline: TextBaseline.ideographic,
-            decoration: TextDecoration.underline,
-            decorationColor: Colors.blue,
+        Container(
+          padding: const EdgeInsets.only(top: 2, bottom: 3, left: 8, right: 10),
+          decoration: BoxDecoration(
+            color: Colors.grey.withOpacity(0.15),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 1),
+                child: Icon(
+                  Icons.arrow_back_ios_new_rounded,
+                  size: 8,
+                  color: Colors.grey[700],
+                ),
+              ),
+              const SizedBox(width: 4),
+              Text(
+                '۴ دیدگاه',
+                textDirection: TextDirection.rtl,
+                style: TextStyle(
+                  color: Colors.grey[700],
+                  fontFamily: 'CM',
+                  fontSize: 11,
+                ),
+              ),
+            ],
           ),
         ),
         const Spacer(),
@@ -96,7 +116,7 @@ class RecipeHeader extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 8),
+          padding: const EdgeInsets.only(top: 4),
           child: Row(
             children: List.generate(
               4,
