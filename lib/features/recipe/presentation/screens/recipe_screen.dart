@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mazeh_app/core/constants/app_color.dart';
+import 'package:mazeh_app/features/recipe/presentation/widgets/custome_image_carousel.dart';
 import 'package:mazeh_app/features/recipe/presentation/widgets/glass_action_button.dart';
-import 'package:mazeh_app/features/recipe/presentation/widgets/image_banner_indicator.dart';
 import 'package:mazeh_app/features/recipe/presentation/widgets/lets_cook_button.dart';
 import 'package:mazeh_app/features/recipe/presentation/widgets/recipe_info.dart';
 import 'package:mazeh_app/features/recipe/presentation/widgets/recipe_ingredient.dart';
@@ -52,23 +52,23 @@ class RecipeScreen extends StatelessWidget {
                     onTap: null,
                   ),
                 ],
-                bottom: const PreferredSize(
-                  preferredSize: Size.fromHeight(10),
-                  child: Column(
-                    children: [
-                      ImageBannersIndicator(),
-                      SizedBox(height: 8.0),
-                      BottomSheetHeader(showRightRadius: false),
-                    ],
-                  ),
+                bottom: PreferredSize(
+                  preferredSize: const Size.fromHeight(10),
+                  child: const BottomSheetHeader(showRightRadius: false),
                 ),
                 backgroundColor: AppColor.red,
                 expandedHeight: 220,
                 flexibleSpace: FlexibleSpaceBar(
                   collapseMode: CollapseMode.none,
-                  background: Image.asset(
-                    'images/banner2.png',
-                    fit: BoxFit.cover,
+                  background: CustomImageCarousel(
+                    images: [
+                      'images/banner2.png',
+                      'images/pasta1.jpg',
+                      'images/pasta2.jpg',
+                      'images/pasta3.jpg',
+                      'images/pasta4.jpg',
+                      'images/pasta5.jpg',
+                    ],
                   ),
                 ),
               ),
