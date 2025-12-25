@@ -99,35 +99,37 @@ class RecipeScreen extends StatelessWidget {
               ),
             ];
           },
-          body: const CustomScrollView(
+          body: CustomScrollView(
             slivers: [
-              SliverToBoxAdapter(
+              const SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.only(right: 24, left: 12, bottom: 8),
+                  padding: EdgeInsets.only(right: 24, left: 12),
                   child: RecipeDescription(),
                 ),
               ),
+              const SliverPadding(padding: EdgeInsets.only(bottom: 16)),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.only(right: 24, top: 8, bottom: 2),
-                  child: RecipeNutritionTitle(),
+                  padding: EdgeInsets.only(right: 24, bottom: 4),
+                  child: const RecipeNutritionTitle(),
                 ),
               ),
+              const SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.only(right: 24),
+                  child: NutritionExpandableList(),
+                ),
+              ),
+              const SliverPadding(padding: EdgeInsets.only(bottom: 16)),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.only(right: 24, left: 12, bottom: 8),
-                  child: RecipeNutritionInfo(),
+                  padding: EdgeInsets.only(right: 24, bottom: 4),
+                  child: const RecipeIngredientsTitle(),
                 ),
               ),
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: EdgeInsets.only(right: 24, top: 8, bottom: 6),
-                  child: RecipeIngredientsTitle(),
-                ),
-              ),
-              SliverToBoxAdapter(child: RecipeIngredientsList()),
-              SliverToBoxAdapter(child: InteractiveTimeline()),
-              SliverToBoxAdapter(
+              const SliverToBoxAdapter(child: RecipeIngredientsList()),
+              const SliverToBoxAdapter(child: InteractiveTimeline()),
+              const SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.only(
                     right: 24,
