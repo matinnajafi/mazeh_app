@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 class SearchBox extends StatelessWidget {
   final VoidCallback onFilterTap;
+  final String hintText;
 
-  const SearchBox({super.key, required this.onFilterTap});
+  const SearchBox({
+    super.key,
+    required this.onFilterTap,
+    this.hintText = 'جستجوی دستور غذا ...',
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +40,7 @@ class SearchBox extends StatelessWidget {
                   decoration: InputDecoration(
                     enabledBorder: InputBorder.none,
                     focusedBorder: InputBorder.none,
-                    hintText: 'جستجوی دستور غذا ...',
+                    hintText: hintText,
                     hintStyle: TextStyle(
                       fontFamily: 'CSB',
                       color: Colors.grey.shade400,
