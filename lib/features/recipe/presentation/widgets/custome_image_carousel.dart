@@ -4,8 +4,13 @@ import 'package:mazeh_app/features/recipe/presentation/widgets/image_gallery_ind
 
 class CustomImageCarousel extends StatefulWidget {
   final List<String> images; // Image paths
+  final bool isBannerSlider;
 
-  const CustomImageCarousel({super.key, required this.images});
+  const CustomImageCarousel({
+    super.key,
+    required this.images,
+    required this.isBannerSlider,
+  });
 
   @override
   State<CustomImageCarousel> createState() => _CustomImageCarouselState();
@@ -51,11 +56,14 @@ class _CustomImageCarouselState extends State<CustomImageCarousel> {
         ),
 
         // Indicator
-        Positioned(
-          bottom: 24,
-          child: ImageGalleryIndicator(
-            currentIndex: _currentActiveIndex,
-            itemCount: widget.images.length,
+        Visibility(
+          visible: widget.isBannerSlider,
+          child: Positioned(
+            bottom: 24,
+            child: ImageGalleryIndicator(
+              currentIndex: _currentActiveIndex,
+              itemCount: widget.images.length,
+            ),
           ),
         ),
       ],

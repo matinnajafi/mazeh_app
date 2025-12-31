@@ -1,5 +1,7 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:mazeh_app/core/constants/app_color.dart';
+import 'package:mazeh_app/features/recipe/presentation/screens/recipe_gallery_screen.dart';
 import 'package:mazeh_app/features/recipe/presentation/widgets/custome_image_carousel.dart';
 import 'package:mazeh_app/features/recipe/presentation/widgets/glass_action_button.dart';
 import 'package:mazeh_app/features/recipe/presentation/widgets/lets_cook_button.dart';
@@ -57,18 +59,52 @@ class RecipeScreen extends StatelessWidget {
                   child: const BottomSheetHeader(showRightRadius: false),
                 ),
                 backgroundColor: AppColor.red,
-                expandedHeight: 220,
+                expandedHeight: 240,
                 flexibleSpace: FlexibleSpaceBar(
                   collapseMode: CollapseMode.none,
-                  background: CustomImageCarousel(
-                    images: [
-                      'images/banner2.png',
-                      'images/pasta1.jpg',
-                      'images/pasta2.jpg',
-                      'images/pasta3.jpg',
-                      'images/pasta4.jpg',
-                      'images/pasta5.jpg',
-                    ],
+                  background: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        PageRouteBuilder(
+                          transitionDuration: Duration(milliseconds: 700),
+                          pageBuilder: (
+                            context,
+                            animation,
+                            secondaryAnimation,
+                          ) {
+                            return RecipeGalleryScreen();
+                          },
+                          transitionsBuilder: (
+                            context,
+                            animation,
+                            secondaryAnimation,
+                            child,
+                          ) {
+                            return SharedAxisTransition(
+                              animation: animation.drive(
+                                CurveTween(curve: Curves.ease),
+                              ),
+                              secondaryAnimation: secondaryAnimation,
+                              transitionType:
+                                  SharedAxisTransitionType
+                                      .vertical, // Moves bottom to top
+                              child: child,
+                            );
+                          },
+                        ),
+                      );
+                    },
+                    child: CustomImageCarousel(
+                      isBannerSlider: true,
+                      images: [
+                        'images/banner2.png',
+                        'images/pasta1.jpg',
+                        'images/pasta2.jpg',
+                        'images/pasta3.jpg',
+                        'images/pasta4.jpg',
+                        'images/pasta5.jpg',
+                      ],
+                    ),
                   ),
                 ),
               ),
