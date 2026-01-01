@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mazeh_app/core/routing/go_router.dart';
+import 'package:mazeh_app/features/register/presentation/screens/register_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routerConfig: appGlobalRout,
+      home: RegisterScreen(),
     );
   }
 }
