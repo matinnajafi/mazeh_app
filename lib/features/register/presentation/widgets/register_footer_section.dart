@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mazeh_app/core/constants/app_color.dart';
 
 class RegisterFooterSection extends StatelessWidget {
@@ -106,7 +107,9 @@ class RegisterFooterSection extends StatelessWidget {
                     AppColor.red.withOpacity(0.02),
                   ), // splash color
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  context.go('/register_phone');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -116,7 +119,7 @@ class RegisterFooterSection extends StatelessWidget {
                       child: Image.asset('images/mobile.png'),
                     ),
                     const Text(
-                      'با شماره موبایل وارد شوید',
+                      'ورود با شماره موبایل',
                       style: TextStyle(color: Colors.black, fontFamily: 'CSB'),
                     ),
                     const SizedBox(width: 32, height: 32),
@@ -140,17 +143,19 @@ class RegisterFooterSection extends StatelessWidget {
                     AppColor.red.withOpacity(0.02),
                   ), // splash color
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  context.go('/register_username');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      height: 28,
-                      width: 28,
-                      child: Image.asset('images/icon_google.png'),
+                      height: 34,
+                      width: 34,
+                      child: Image.asset('images/person_id.png'),
                     ),
                     const Text(
-                      'با حساب گوگل وارد شوید',
+                      'ورود با نام کاربری',
                       style: TextStyle(color: Colors.black, fontFamily: 'CSB'),
                     ),
                     const SizedBox(width: 32, height: 32),
@@ -209,7 +214,9 @@ class RegisterFooterSection extends StatelessWidget {
                     AppColor.red.withOpacity(0.02),
                   ), // splash color
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  context.go('/register_email');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

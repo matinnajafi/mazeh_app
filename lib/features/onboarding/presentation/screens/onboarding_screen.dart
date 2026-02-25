@@ -117,14 +117,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
             // close button
             Positioned(
-              top: 44,
+              top: 32,
               right: 24,
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  context.go('/register');
+                },
                 child: const Icon(Icons.close_rounded, color: Colors.white),
               ),
             ),
-
             Positioned(
               bottom: 50,
               left: 34,

@@ -72,13 +72,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          children: [
-            FoodListHeader(
-              controllerRight: _controllerRight,
-              controllerLeft: _controllerLeft,
-            ),
-            const RegisterFooterSection(),
-          ],
+          children: [const FoodListHeader(), const RegisterFooterSection()],
         ),
       ),
     );
