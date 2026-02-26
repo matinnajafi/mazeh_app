@@ -14,13 +14,13 @@ void showAppToast({
   Color bg;
   switch (type) {
     case ToastType.success:
-      bg = Colors.green.withOpacity(0.9);
+      bg = Colors.green.withValues(alpha: 0.9);
       break;
     case ToastType.error:
-      bg = Colors.red.withOpacity(0.9);
+      bg = Colors.red.withValues(alpha: 0.9);
       break;
     case ToastType.warning:
-      bg = Colors.orange.withOpacity(0.9);
+      bg = Colors.orange.withValues(alpha: 0.9);
       break;
   }
 

@@ -87,7 +87,7 @@ class RegisterFooterSection extends StatelessWidget {
 
             Divider(
               thickness: 1,
-              color: Colors.grey.withOpacity(0.1),
+              color: Colors.grey.withValues(alpha: 0.1),
               indent: 18,
               endIndent: 18,
             ),
@@ -101,10 +101,10 @@ class RegisterFooterSection extends StatelessWidget {
                 style: OutlinedButton.styleFrom(
                   minimumSize: const Size(double.infinity, 52),
                   backgroundColor: AppColor.backgroundColor,
-                  side: BorderSide(color: Colors.grey.withOpacity(0.25)),
+                  side: BorderSide(color: Colors.grey.withValues(alpha: 0.25)),
                 ).copyWith(
                   overlayColor: WidgetStateProperty.all(
-                    AppColor.red.withOpacity(0.02),
+                    AppColor.red.withValues(alpha: 0.02),
                   ), // splash color
                 ),
                 onPressed: () {
@@ -137,10 +137,10 @@ class RegisterFooterSection extends StatelessWidget {
                 style: OutlinedButton.styleFrom(
                   minimumSize: const Size(double.infinity, 52),
                   backgroundColor: AppColor.backgroundColor,
-                  side: BorderSide(color: Colors.grey.withOpacity(0.25)),
+                  side: BorderSide(color: Colors.grey.withValues(alpha: 0.25)),
                 ).copyWith(
                   overlayColor: WidgetStateProperty.all(
-                    AppColor.red.withOpacity(0.02),
+                    AppColor.red.withValues(alpha: 0.02),
                   ), // splash color
                 ),
                 onPressed: () {
@@ -172,7 +172,7 @@ class RegisterFooterSection extends StatelessWidget {
                 Expanded(
                   child: Divider(
                     thickness: 1,
-                    color: Colors.grey.withOpacity(0.1),
+                    color: Colors.grey.withValues(alpha: 0.1),
                     indent: 18,
                     endIndent: 2,
                   ),
@@ -182,7 +182,7 @@ class RegisterFooterSection extends StatelessWidget {
                   child: Text(
                     'با ایمیل وارد شوید',
                     style: TextStyle(
-                      color: Colors.grey.withOpacity(0.8),
+                      color: Colors.grey.withValues(alpha: 0.8),
                       fontFamily: 'CM',
                       fontSize: 12,
                     ),
@@ -191,7 +191,7 @@ class RegisterFooterSection extends StatelessWidget {
                 Expanded(
                   child: Divider(
                     thickness: 1,
-                    color: Colors.grey.withOpacity(0.1),
+                    color: Colors.grey.withValues(alpha: 0.1),
                     indent: 2,
                     endIndent: 18,
                   ),
@@ -208,10 +208,10 @@ class RegisterFooterSection extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(double.infinity, 52),
                   backgroundColor: Colors.black,
-                  side: BorderSide(color: Colors.grey.withOpacity(0.2)),
+                  side: BorderSide(color: Colors.grey.withValues(alpha: 0.2)),
                 ).copyWith(
                   overlayColor: WidgetStateProperty.all(
-                    AppColor.red.withOpacity(0.02),
+                    AppColor.red.withValues(alpha: 0.02),
                   ), // splash color
                 ),
                 onPressed: () {
@@ -256,7 +256,7 @@ class RegisterFooterSection extends StatelessWidget {
                 Text(
                   'حساب دارید؟',
                   style: TextStyle(
-                    color: Colors.grey.withOpacity(0.8),
+                    color: Colors.grey.withValues(alpha: 0.8),
                     fontFamily: 'CM',
                     fontSize: 12,
                   ),

@@ -25,7 +25,7 @@ class RecipeTagsBar extends StatelessWidget {
         Container(
           padding: const EdgeInsets.only(top: 2, bottom: 3, left: 8, right: 10),
           decoration: BoxDecoration(
-            color: Colors.grey.withOpacity(0.15),
+            color: Colors.grey.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
@@ -63,7 +63,7 @@ class RecipeTagsBar extends StatelessWidget {
             right: 12,
           ),
           decoration: BoxDecoration(
-            color: Colors.pinkAccent.withOpacity(0.15),
+            color: Colors.pinkAccent.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(12),
           ),
           child: const Text(
@@ -86,7 +86,7 @@ class RecipeTagsBar extends StatelessWidget {
             right: 12,
           ),
           decoration: BoxDecoration(
-            color: Colors.green.withOpacity(0.15),
+            color: Colors.green.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(12),
           ),
           child: const Text(

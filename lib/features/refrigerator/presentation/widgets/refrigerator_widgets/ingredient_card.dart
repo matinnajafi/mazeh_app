@@ -15,8 +15,8 @@ class IngredientItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(6),
             gradient: LinearGradient(
               colors: [
-                Colors.blue.withOpacity(0.85),
-                Colors.blue.withOpacity(0.5),
+                Colors.blue.withValues(alpha: 0.85),
+                Colors.blue.withValues(alpha: 0.5),
               ],
               stops: const [0.0, 1.0],
               begin: Alignment.topLeft,

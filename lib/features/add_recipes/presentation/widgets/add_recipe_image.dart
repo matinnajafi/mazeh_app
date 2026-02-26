@@ -29,7 +29,7 @@ class RecipeImageList extends StatelessWidget {
                       width: 80,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Colors.grey.withOpacity(0.1),
+                        color: Colors.grey.withValues(alpha: 0.1),
                         image: DecorationImage(
                           image: AssetImage('images/pasta${index + 1}.jpg'),
                           fit: BoxFit.cover,
@@ -77,7 +77,7 @@ class AddRecipeImageField extends StatelessWidget {
         options: RoundedRectDottedBorderOptions(
           radius: const Radius.circular(6),
           dashPattern: const [8, 4],
-          color: Colors.grey.withOpacity(0.1),
+          color: Colors.grey.withValues(alpha: 0.1),
           strokeWidth: 2,
         ),
         child: Container(
@@ -93,7 +93,7 @@ class AddRecipeImageField extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'CM',
                   fontSize: 14,
-                  color: Colors.grey.withOpacity(0.5),
+                  color: Colors.grey.withValues(alpha: 0.5),
                 ),
               ),
               ElevatedButton(

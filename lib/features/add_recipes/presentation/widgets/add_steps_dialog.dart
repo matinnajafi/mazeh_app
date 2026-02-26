@@ -37,7 +37,7 @@ class _AddStepsDialogState extends State<AddStepsDialog> {
           // title field
           Container(
             decoration: BoxDecoration(
-              color: Colors.grey.withOpacity(0.1),
+              color: Colors.grey.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
                 color: titleError ? Colors.red : Colors.transparent,
@@ -66,7 +66,7 @@ class _AddStepsDialogState extends State<AddStepsDialog> {
           // description field
           Container(
             decoration: BoxDecoration(
-              color: Colors.grey.withOpacity(0.1),
+              color: Colors.grey.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
                 color: descError ? Colors.red : Colors.transparent,

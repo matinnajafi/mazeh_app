@@ -119,7 +119,7 @@ class _Footer extends StatelessWidget {
                   right: 12,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.green.withOpacity(0.25),
+                  color: Colors.green.withValues(alpha: 0.25),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: const Text(
@@ -157,7 +157,7 @@ class _Header extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                 ),
                 child: const Padding(
                   padding: EdgeInsets.all(5.0),
@@ -182,7 +182,7 @@ class _Header extends StatelessWidget {
                 height: 30,
                 width: 100,
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(18),
                     bottomRight: Radius.circular(18),
@@ -214,7 +214,7 @@ class BlackGradient extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.bottomCenter,
           end: Alignment.topCenter,
-          colors: [Colors.black.withOpacity(0.5), Colors.transparent],
+          colors: [Colors.black.withValues(alpha: 0.5), Colors.transparent],
         ),
       ),
     );

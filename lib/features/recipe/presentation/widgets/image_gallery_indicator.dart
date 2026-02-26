@@ -28,7 +28,7 @@ class ImageGalleryIndicator extends StatelessWidget {
             height: 26,
             padding: const EdgeInsets.symmetric(horizontal: 12),
             decoration: ShapeDecoration(
-              color: Colors.white.withOpacity(0.15),
+              color: Colors.white.withValues(alpha: 0.15),
               shape: StadiumBorder(),
             ),
             // Use IntrinsicWidth to size the indicator based on the number of dots

@@ -49,7 +49,7 @@ class RecipeGalleryScreen extends StatelessWidget {
                     topRight: Radius.circular(12),
                     bottomRight: Radius.circular(12),
                   ),
-                  color: Colors.grey.withOpacity(0.2),
+                  color: Colors.grey.withValues(alpha: 0.2),
                 ),
                 child: Directionality(
                   textDirection: TextDirection.rtl,

@@ -81,7 +81,7 @@ class _AnimatedDropdownFieldState extends State<AnimatedDropdownField>
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.1),
+                color: Colors.grey.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.only(
                   topLeft: const Radius.circular(12),
                   topRight: const Radius.circular(12),
@@ -120,7 +120,7 @@ class _AnimatedDropdownFieldState extends State<AnimatedDropdownField>
               sizeFactor: _animation,
               axisAlignment: -1,
               child: Container(
-                color: Colors.grey.withOpacity(0.04),
+                color: Colors.grey.withValues(alpha: 0.04),
                 child: ListView(
                   controller: _scrollController,
                   shrinkWrap: true,

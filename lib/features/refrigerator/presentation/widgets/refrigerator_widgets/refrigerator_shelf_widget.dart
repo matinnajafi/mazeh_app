@@ -37,7 +37,7 @@ class ShelfGlass extends StatelessWidget {
             topRight: const Radius.circular(60),
           ),
         ),
-        color: Colors.blue.withOpacity(0.04),
+        color: Colors.blue.withValues(alpha: 0.04),
       ),
     );
   }
@@ -57,14 +57,14 @@ class BackOfTheRefrigerator extends StatelessWidget {
         boxShadow: [
           // Right side shadow (soft)
           BoxShadow(
-            color: Colors.grey.withOpacity(0.11),
+            color: Colors.grey.withValues(alpha: 0.11),
             blurRadius: 16,
             spreadRadius: -4,
             offset: const Offset(24, 0),
           ),
           // Left side shadow (soft)
           BoxShadow(
-            color: Colors.grey.withOpacity(0.11),
+            color: Colors.grey.withValues(alpha: 0.11),
             blurRadius: 16,
             spreadRadius: -4,
             offset: const Offset(-24, 0),
@@ -94,7 +94,7 @@ class SideShadow extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.15),
+            color: Colors.black.withValues(alpha: 0.15),
             blurRadius: 28,
             spreadRadius: -4,
             offset: offset,

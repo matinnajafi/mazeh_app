@@ -112,7 +112,7 @@ class _InteractiveTimelineState extends State<InteractiveTimeline> {
                   decoration: BoxDecoration(
                     color:
                         isCurrent
-                            ? AppColor.red.withOpacity(0.05)
+                            ? AppColor.red.withValues(alpha: 0.05)
                             : Colors.transparent,
                     borderRadius: BorderRadius.circular(8),
                   ),

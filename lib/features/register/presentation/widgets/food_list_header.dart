@@ -106,7 +106,7 @@ class _FoodListHeaderState extends State<FoodListHeader> {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Colors.black.withValues(alpha: 0.05),
                     blurRadius: 10,
                     offset: const Offset(0, 5),
                   ),
@@ -126,8 +126,8 @@ class _FoodListHeaderState extends State<FoodListHeader> {
           gradient: LinearGradient(
             colors: [
               AppColor.backgroundColor,
-              AppColor.backgroundColor.withOpacity(0.8),
-              AppColor.backgroundColor.withOpacity(0.0),
+              AppColor.backgroundColor.withValues(alpha: 0.8),
+              AppColor.backgroundColor.withValues(alpha: 0.0),
             ],
             begin: Alignment.bottomCenter,
             end: Alignment.topCenter,

@@ -24,7 +24,7 @@ class DialogTitle extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 elevation: 0,
                 minimumSize: const Size(80, 30),
-                backgroundColor: AppColor.red.withOpacity(0.1),
+                backgroundColor: AppColor.red.withValues(alpha: 0.1),
                 padding: const EdgeInsets.symmetric(
                   horizontal: 12,
                   vertical: 6,

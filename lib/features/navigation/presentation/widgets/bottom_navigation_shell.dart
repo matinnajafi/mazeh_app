@@ -21,7 +21,7 @@ class BottomNavigationShell extends StatelessWidget {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.25), // darker shadow
+              color: Colors.black.withValues(alpha: 0.25), // darker shadow
               blurRadius: 12,
               spreadRadius: -24,
               offset: const Offset(0, -2),
