@@ -7,107 +7,125 @@ class RegisterWithUsernameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 20),
+        child: SingleChildScrollView(
+          child: Directionality(
+            textDirection: TextDirection.rtl,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 20),
 
-              // دکمه بازگشت هوشمند
-              GestureDetector(
-                onTap: () => context.go('/register'),
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withValues(alpha: 0.1),
-                    shape: BoxShape.circle,
+                  // back button
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: () => context.go('/register'),
+                        child: const Icon(
+                          Icons.keyboard_arrow_left,
+                          size: 28,
+                          color: Colors.black87,
+                        ),
+                      ),
+                    ],
                   ),
-                  child: const Icon(
-                    Icons.arrow_back_ios_new,
-                    size: 20,
-                    color: Colors.black87,
-                  ),
-                ),
-              ),
 
-              const SizedBox(height: 40),
-
-              // تیتر
-              const Text(
-                'آدرس یوزر 📧',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
-                ),
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'لطفاً یووزرنیم معتبر خود را وارد کنید.',
-                style: TextStyle(fontSize: 16, color: Colors.grey),
-              ),
-
-              const SizedBox(height: 40),
-
-              // فیلد ورود ایمیل
-              TextField(
-                keyboardType: TextInputType.emailAddress,
-                style: const TextStyle(fontSize: 16),
-                decoration: InputDecoration(
-                  hintText: 'example@mail.com',
-                  hintStyle: TextStyle(color: Colors.grey.shade400),
-                  filled: true,
-                  fillColor: Colors.grey.shade50,
-                  prefixIcon: const Icon(
-                    Icons.email_outlined,
-                    color: Colors.blueAccent,
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide.none,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide(color: Colors.grey.shade200),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: const BorderSide(
-                      color: Colors.blueAccent,
-                      width: 2,
+                  const SizedBox(height: 40),
+                  Image.asset('images/intro1.png', width: 120, height: 120),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'لطفاً نام کاربری و رمز عبور خود را وارد کنید.',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                      fontFamily: 'CM',
                     ),
                   ),
-                ),
-              ),
+                  const SizedBox(height: 40),
 
-              const SizedBox(height: 24),
+                  // username field
+                  _buildTextField(
+                    hint: 'نام کاربری',
+                    icon: Icons.person_outline,
+                    keyboardType: TextInputType.text,
+                  ),
 
-              // دکمه مرحله بعد
-              SizedBox(
-                width: double.infinity,
-                height: 56,
-                child: ElevatedButton(
-                  onPressed: () {
-                    context.push('/register_username');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueAccent,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
+                  const SizedBox(height: 16),
+
+                  // password field
+                  _buildTextField(
+                    hint: 'رمز عبور',
+                    icon: Icons.lock_outline,
+                    isPassword: true,
+                  ),
+
+                  const SizedBox(height: 32),
+
+                  // login/reister button
+                  SizedBox(
+                    width: double.infinity,
+                    height: 58,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // login & register logic
+                        context.push('/home');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blueAccent,
+                        foregroundColor: Colors.white,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                      child: const Text(
+                        'ورود به حساب',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                    elevation: 0,
                   ),
-                  child: const Text(
-                    'مرحله بعد',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
+        ),
+      ),
+    );
+  }
+
+  // helper method for textfileds
+  Widget _buildTextField({
+    required String hint,
+    required IconData icon,
+    bool isPassword = false,
+    TextInputType keyboardType = TextInputType.text,
+  }) {
+    return TextField(
+      obscureText: isPassword,
+      keyboardType: keyboardType,
+      style: const TextStyle(fontSize: 16),
+      decoration: InputDecoration(
+        hintText: hint,
+        hintStyle: TextStyle(color: Colors.grey.shade400),
+        filled: true,
+        fillColor: Colors.grey.shade50,
+        prefixIcon: Icon(icon, color: Colors.blueAccent),
+        // defult style
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(color: Colors.grey.shade200),
+        ),
+        // focus style (clicked)
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: const BorderSide(color: Colors.blueAccent, width: 2),
         ),
       ),
     );
